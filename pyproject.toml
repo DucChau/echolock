@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "echolock"
+version = "0.1.0"
+description = "Behavioral fingerprinting for Python codebases — detect silent execution-path changes that tests miss."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "hellohaven.ai"},
+]
+keywords = ["tracing", "fingerprint", "behavioral", "testing", "drift-detection"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Testing",
+]
+
+[project.optional-dependencies]
+pretty = ["rich>=13.0"]
+
+[project.scripts]
+echolock = "echolock.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
